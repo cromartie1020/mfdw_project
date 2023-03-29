@@ -1,0 +1,11 @@
+{% extends 'learn/base.html' %}
+
+{% block title %}
+  New Entry
+{% endblock %}
+ 
+{% block content %}
+<h1><p>Topic is: {% topic %} </p></h1>
+{{ entry.topic}}
+
+{% endblock %}

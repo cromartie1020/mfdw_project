@@ -1,0 +1,32 @@
+{% extends 'learn/base.html' %}
+
+{% block title %}
+ List of Topics
+{% endblock %}
+ 
+{% block content %}
+
+  <br/> 
+  {{ topic.id}}: {{ topic.text}}
+
+  <br>
+  Date added: -- {{ topic.date_added|date:'M d Y :hi'   }}
+  <br/>
+
+    
+  {% for entry in entries %}  
+    {{ entry.text }} 
+    <br/>
+    
+
+    
+  {% empty %}
+   <h3>No entries entered for this topic. </h3>
+     
+  {% endfor %}
+  <br/>
+  <a href="{% url 'new_topic'  %}">Enter a new topic.</a> 
+  <a href="{% url 'new_entry' topic.id %}">Enter a new entry.</a> 
+  
+  
+{% endblock %}

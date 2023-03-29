@@ -1,0 +1,31 @@
+{% extends 'learn/base.html' %}
+
+{% block title %}
+List of Topics
+{% endblock %}
+
+{% block content %}
+<div class="mt-5">
+  {% if request.user.is_authenticated %}
+  <div class="mb-2"> {{request.user }} is logged in.
+  </div>
+  {% else %}
+  <a href="{% url 'login' %}">
+    <h4>Please log in.</h4>
+  </a>
+  {% endif %}
+  <table style="border-collapse: collapse;">
+    {% for topic in topics %}
+    {{ topic.text}}--
+
+    Date added: -- {{ topic.date_added|date:'M d Y :h1' }}
+
+    <br>
+
+
+    {% empty %}
+    <h3>No topics entered at this time</h3>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

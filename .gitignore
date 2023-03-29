@@ -1,0 +1,7 @@
+env/*
+__init__.py/*
+*pyc
+.vscode
+myExtension.vsix
+mfdw_project.sql
+
